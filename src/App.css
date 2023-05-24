@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Lato', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap');
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --primary-color: #16213E;
+  --secondary-color: #150050;
+  --terciary-color: #3F0071;
+  --accent-color: #FB2576;
+  --font: 'Inter', sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: var(--font);
+}
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+section {
+  width: 100%;
   min-height: 100vh;
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
+  padding: 5vh 0;
+  color:white;
+}
+main {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 22vw;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: rgba(255, 255, 255, .3);
+  -webkit-text-stroke: 1px white;
+}
+.form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.form input {
+  padding: 10px 15px;
+  border: 1px solid var(--secondary-color);
+  background-color: white;
+  color: var(--secondary-color);
+  width: 100%;
+  min-height: 24px;
+  border-right: none;
+}
+.form input:focus {
+  outline: 0;
+}
+.form button {
+  border-radius: 0;
+  background-color: var(--accent-color);
+  padding: 10px 15px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+.output {
+  margin-top:20px;
+  padding: 10px;
+  border:1px dashed white;
+  font-size: 5vw;
+}
+.output p {
+  display: flex;
+  flex-direction: column;
+}
+.output a {
+  color:var(--accent-color);
+  font-weight: 500;
+  margin-top:10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 500px) {
+  main {
+    max-width: 400px;
   }
-  to {
-    transform: rotate(360deg);
+  h1 {
+    font-size: 15vw;
+    text-align: center;
+  }
+  .output p {
+    font-size: 1.4rem;
+    flex-direction: row;
+  }
+  .output a {
+    margin-top: 0;
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 10vw;
+    margin-bottom: 20px;
   }
 }
