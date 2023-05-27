@@ -30,6 +30,7 @@ const App = () => {
   return (
     <section>
       <h1>Link Cutter</h1>
+      <span></span>
       <main>
         <div className='form'>
           <input
