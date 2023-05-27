@@ -11,14 +11,20 @@ function generateRandomString(length) {
   return randomString;
 }
 
+function cutLink(originalLink) {
+  const randomString = generateRandomString(9);
+  return `cut.now/${randomString}`;
+}
+
+const commonLink = 'https://moontrip-linkcutter.vercel.app/'; // Specify your common link here
+
 const App = () => {
   const [originalLink, setOriginalLink] = useState('');
   const [cutLink, setCutLink] = useState('');
 
   const handleCutLink = () => {
-    const randomString = generateRandomString(9);
-    const cut = `cut.now/${randomString}`;
-    setCutLink(cut);
+    const cut = cutLink(originalLink);
+    setCutLink(commonLink + cut);
   };
 
   return (
@@ -47,10 +53,7 @@ const App = () => {
         {cutLink && (
           <div className='output'>
             <p>
-              Cut Link:{' '}
-              <a href={originalLink} target="_blank" rel="noopener noreferrer">
-                {cutLink}
-              </a>
+              Cut Link: <a href={cutLink} target="_blank" rel="noopener noreferrer">{cutLink}</a>
             </p>
           </div>
         )}
